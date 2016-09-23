@@ -538,3 +538,45 @@ puts "Enter a Word"
 a = gets.chomp
 p is_palindrome(a)
 ```
+## Duplicates from two lists
+```javascript
+var array1 = ['12','1','10','19','100'];
+var array2 = ['12','10','19'];
+```
+I need to a method to get the unique from two arrays and put them in array3 Array3 should be -: var array3 = ['1','100'];
+
+```javascript
+var array3 = array1.filter(function(obj) { return array2.indexOf(obj) == -1; });
+```
+```javascript
+var unique = [];
+for(var i = 0; i < array1.length; i++){
+    var found = false;
+    for(var j = 0; array2.length; j++){
+     if(array1[i] == array2[j]){
+      found = true;
+      break;
+    }
+   }
+   if(found == false){
+   unique.push(array1[i]);
+  }
+}
+```
+```javascript
+var array1 = ['12','1','10','19','100'];
+var array2 = ['12','10','19'];
+var o = {};
+for(var i in array1) {
+    o[i] = 1;
+}
+for(var i in array2) {
+    o[i] = 0;
+}
+var array3 = [];
+for(var i in o) {
+    if(o[i] == 1) {
+        array3.push(i);
+    }
+}
+```
