@@ -1,11 +1,31 @@
-#### Coding Questions:
+# Coding Questions:
 
 *Question: What is the value of `foo`?*
 ```javascript
 var foo = 10 + '20';
 ```
+## Quick Brown Fox
 
-*20. Permutations
+
+You're given a vector of vectors of words, e.g.:
+```javascript
+[['quick', 'lazy'], ['brown', 'black', 'grey'], ['fox', 'dog']].
+```
+
+Write a generalized function that prlets all combinations of one word from the first vector, one word from the second vector, etc.
+The solution may not use recursion.
+NOTE: the number of vectors and number of elements within each vector may vary.
+
+For the input above, it should prlet (in any order):
+quick brown fox
+quick brown dog
+quick black fox
+quick black dog
+...
+lazy grey dog
+
+
+## Permutations
 Question: How would you create all permutation of a string?
 
 Answer: This could be a tough one based on you level of knowledge about algorithm.
@@ -13,7 +33,7 @@ Answer: This could be a tough one based on you level of knowledge about algorith
 ```javascript
 function permutations(str){
 var arr = str.split(''),
-    len = arr.length, 
+    len = arr.length,
     perms = [],
     rest,
     picked,
@@ -39,8 +59,9 @@ var arr = str.split(''),
    return perms;
 };
 permutations("banana");
+```
 
-Explanation:
+#### Explanation:
 
 Idea: Idea is very simple. We will convert the string to an array. from the array we will pick one character and then permute rest of it. After getting the permutation of the rest of the characters, we will concatenate each of them with the character we have picked.
 step-1 First copy original array to avoid changing it while picking elements
@@ -67,3 +88,254 @@ And they should invoke it on your array like this (context for apply can be what
 var data = [1,2,3];
 sum.apply(null, data); // 6
 ```
+
+## Check Prime
+
+Question: How would you verify a prime number?
+
+Answer: a prime number is only divisible by itself and 1. So, i will run a while loop and increase by 1. (look at the code example. If you dont get it. this is not your cake. do learn javaScript basics and come back.)
+
+```javascript
+function isPrime(n){
+  var divisor = 2;
+
+  while (n > divisor){
+    if(n % divisor == 0){
+     return false;
+    }
+    else
+      divisor++;
+  }
+  return true;
+}
+
+> isPrime(137);
+  = true
+> isPrime(237);
+  = false
+```
+
+### Interviewer: Can you make this better?
+
+##### You: yes. the divisor are increased 1 at a time. after 3 i can increase by 2. if a number is divisible by any even number, it will be divisible by 2.
+
+### Extra: if you dont have to increase the divisor up to the number. you can stop much earlier. let me explain it in the following steps (just seat back and read as many times as needed)
+
+### Explanation
+step-1: Any number will not be divisible by a number bigger than half of it. for example, 13 will never be divisible by 7, 8, 9 .. it could be as big as half of it for even number. for example, 16 will be divisible by 8 but will never be by 9, 10, 11, 12...
+Decision: a number will never be divisible by a number bigger than half of its values. So, we dont have to loop 50%
+step-2: Now, if a number is not divisible by 3. (if it is divisible by 3, then it wouldn't be a prime number). then it would be divisible any number bigger than the 1/3 of its value. for example, 35 is not divisible by 3. hence it will be never divisible by any number bigger than 35/3 will never be divisible by 12, 13, 14 ... if you take an even number like 36 it will never be divisible by 13, 14, 15
+Decision: a number could be divisible by numbers 1/3 of its value.
+step-3: For example u have the number 127. 127 is not divisible by 2 hence you should check upto 63.5. Secondly, 127 is not divisible by 3. So, you will check up to 127/3 approximately 42. It is not divisible by 5, divisor should be less than 127/5 approximately 25 not by 7. So, where should we stop?
+Decision: divisor would be less than Math.sqrt (n)
+
+
+### moar
+Question: How would you remove duplicate members from an array?
+
+Answer: will start a while looping and keep an object/ associated array. If i find an element for the first time i will set its value as true (that will tell me element added once.). if i find a element in the exists object, i will not insert it into the return array.
+
+```javascript
+function removeDuplicate(arr){
+  var exists ={},
+      outArr = [],
+      elm;
+
+  for(var i =0; i<arr.length; i++){
+    elm = arr[i];
+    if(!exists[elm]){
+      outArr.push(elm);
+      exists[elm] = true;
+   }
+  }
+  return outArr;
+}
+
+> removeDuplicate([1,3,3,3,1,5,6,7,8,1]);
+  = [1, 3, 5, 6, 7, 8]
+
+```
+
+
+## string reverse
+Question: How would you reverse a string in JavaScript?
+
+Answer: I can loop through the string and concatenate letters to a new string
+
+### try 1
+
+function reverse(str){
+  var rtnStr = '';
+  for(var i = str.length-1; i>=0;i--){
+    rtnStr +=str[i];
+  }
+  return rtnStr;
+}
+
+> reverse('you are a nice dude');
+  = "edud ecin a era uoy"
+
+Interviewer: You know concatenation performed well in modern browsers but becomes slow in older browsers like IE8. Is there any different way, you can reverse a string?
+
+Answer: sure. i can use an array and also add some checking. if string is null or other than string this will fail. let me do some type check as well. Using this array is like using string buffer in some server side languages.
+
+try 2
+
+function reverse(str){
+  var rtnStr = [];
+  if(!str || typeof str != 'string' || str.length < 2 ) return str;
+
+  for(var i = str.length-1; i>=0;i--){
+    rtnStr.push(str[i]);
+  }
+  return rtnStr.join('');
+}
+
+Interviewer: What is the run time complexity?
+
+You: O(n)
+
+Interviewer: Can you make this better?
+
+You: I can loop through half of the index and it will save little bit. (this is kind of useless, might not impress interviewer)
+
+try 3
+
+function reverse(str) {
+  str = str.split('');
+  var len = str.length,
+      halfIndex = Math.floor(len / 2) - 1,
+      revStr;
+  for (var i = 0; i <= halfIndex; i++) {
+    revStr = str[len - i - 1];
+    str[len - i - 1] = str[i];
+    str[i] = revStr;
+  }
+  return str.join('');
+}
+
+Interviewer: That works, but can u do it in a recursive way?
+
+You: sure.
+
+try 4
+
+function reverse (str) {
+    if (str === "") {
+        return "";
+    } else {
+        return reverse(str.substr(1)) + str.charAt(0);
+    }
+}
+
+try 5
+Interviewer: Can you use any build in method to make it little cleaner?
+
+You: yes.
+
+
+function reverse(str){
+  if(!str || str.length <2) return str;
+
+  return str.split('').reverse().join('');
+}
+
+try 6
+Question: Can you make reverse function as string extension?
+
+Answer: I need to add this function to the String.prototype and instead of using str as parameter, i need to use this
+
+
+String.prototype.reverse = function (){
+  if(!this || this.length <2) return this;
+
+  return this.split('').reverse().join('');
+}
+
+> 'abc'.reverse();
+  = 'cba'
+
+
+rds
+Question: How would you reverse words in a sentence?
+
+Answer: You have to check for white space and walk through the string. Ask is there could be multiple whitespace.
+
+
+//have a tailing white space
+//fix this later
+//now i m sleepy
+function reverseWords(str){
+ var rev = [],
+     wordLen = 0;
+ for(var i = str.length-1; i>=0; i--){
+   if(str[i]==' ' || i==0){
+     rev.push(str.substr(i,wordLen+1));
+     wordLen = 0;
+   }
+   else
+     wordLen++;
+ }
+ return rev.join(' ');
+}
+
+A quick solution with build in methods:
+
+
+function reverseWords(str){
+  return str.split(' ').reverse();
+}
+
+n place
+Question: If you have a string like "I am the good boy". How can you generate "I ma eht doog yob"? Please note that the words are in place but reverse.
+
+Answer: To do this, i have to do both string reverse and word reverse.
+
+
+function reverseInPlace(str){
+  return str.split(' ').reverse().join(' ').split('').reverse().join('');
+}
+
+> reverseInPlace('I am the good boy');
+ = "I ma eht doog yob"
+
+Interviewer: ok. fine. can you do it without using build in reverse function?
+
+you: (you mumbled): what the heck!!
+
+
+//sum two methods.
+//you can simply split words by ' '
+//and for each words, call reverse function
+//put reverse in a separate function
+
+
+//if u cant do this,
+//have a glass of water, and sleep
+
+reverse in place
+Question: If you have a string like "I am the good boy". How can you generate "I ma eht doog yob"? Please note that the words are in place but reverse.
+
+Answer: To do this, i have to do both string reverse and word reverse.
+
+
+function reverseInPlace(str){
+  return str.split(' ').reverse().join(' ').split('').reverse().join('');
+}
+
+> reverseInPlace('I am the good boy');
+ = "I ma eht doog yob"
+
+#### Interviewer: ok. fine. can you do it without using build in reverse function?
+
+### you: (you mumbled): what the heck!!
+
+
+//sum two methods.
+//you can simply split words by ' '
+//and for each words, call reverse function
+//put reverse in a separate function
+
+
+//if u cant do this,
+//have a glass of water, and sleep
