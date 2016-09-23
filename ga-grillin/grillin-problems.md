@@ -487,11 +487,11 @@ pal.palindrome? #=> true
 ```
 
 ```ruby
-def check_palindromic(variable)
-  if variable.reverse == variable #Check if string same when reversed
-    puts "#{ variable } is a palindrome."
+def check_palindromic(str)
+  if str.reverse == str #Check if string same when reversed
+    puts "#{ str } is a palindrome."
   else # If string is not the same when reversed
-    puts "#{ variable } is not a palindrome."
+    puts "#{ str } is not a palindrome."
   end
 end
 ```
@@ -528,9 +528,9 @@ def is_palindrome(value)
 # we can also use reverse ruby method
 # something like this value == value.reverse
 if value == reversed
-  return "#{value} is a palindrom"
+  return "#{value} is a palindrome"
  else
-  return "#{value} is not a palindrom"
+  return "#{value} is not a palindrome"
  end
 end
 
@@ -578,5 +578,49 @@ for(var i in o) {
     if(o[i] == 1) {
         array3.push(i);
     }
+}
+```
+
+## neg and pos arrays
+You have an array of negative and positive numbers. Please move all negative numbers to the left and all positive numbers to the right without disrupting the original order.
+example input: [-6, 2, 1, 2, -10, -4, 8]
+example output: [-6, -10, -4, 2, 1, 2, 8]
+
+```javascript
+//Decarling arrays needed
+var array = [-6, 2, 1, 2, -10, -4, 8];
+var newArr = [];
+var posArr = [];
+var negArr = [];
+
+
+for (var i = 0; i < array.length; i++) {
+    //console.log(array[i]);
+    if (array[i] < 0) {
+     newArr.push(array[i]);
+    }
+    console.log(newArr);
+}
+
+for (var i = 0; i < array.length; i++) {
+  //console.log(array[i]);
+  if (array[i] > 0) {
+   newArr.push(array[i]);
+  }
+
+  console.log(newArr);
+}
+
+
+/* Refactored to use only one for loop
+
+for (var i = 0; i < array.length; i++) {
+ if (array[i] < 0) {
+  posArr.push(array[i]);
+ } else {
+  negArr.push(array[i]);
+ }
+ newArr = posArr.concat(negArr);
+ console.log(newArr);
 }
 ```
