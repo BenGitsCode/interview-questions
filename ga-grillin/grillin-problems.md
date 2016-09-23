@@ -288,9 +288,7 @@ Question: How would you reverse words in a sentence?
 Answer: You have to check for white space and walk through the string. Ask is there could be multiple whitespace.
 
 
-//have a tailing white space
-//fix this later
-//now i m sleepy
+```javascript
 function reverseWords(str){
  var rev = [],
      wordLen = 0;
@@ -304,32 +302,34 @@ function reverseWords(str){
  }
  return rev.join(' ');
 }
+```
 
 A quick solution with build in methods:
 
-
+```javascript
 function reverseWords(str){
   return str.split(' ').reverse();
 }
+```
 
-n place
+
 Question: If you have a string like "I am the good boy". How can you generate "I ma eht doog yob"? Please note that the words are in place but reverse.
 
 Answer: To do this, i have to do both string reverse and word reverse.
 
-
+```javascript
 function reverseInPlace(str){
   return str.split(' ').reverse().join(' ').split('').reverse().join('');
 }
 
 > reverseInPlace('I am the good boy');
  = "I ma eht doog yob"
-
+```
 Interviewer: ok. fine. can you do it without using build in reverse function?
 
 you: (you mumbled): what the heck!!
 
-
+```javascript
 //sum two methods.
 //you can simply split words by ' '
 //and for each words, call reverse function
@@ -338,19 +338,22 @@ you: (you mumbled): what the heck!!
 
 //if u cant do this,
 //have a glass of water, and sleep
+```
 
-reverse in place
+
+### reverse in place
 Question: If you have a string like "I am the good boy". How can you generate "I ma eht doog yob"? Please note that the words are in place but reverse.
 
 Answer: To do this, i have to do both string reverse and word reverse.
 
-
+```javascript
 function reverseInPlace(str){
   return str.split(' ').reverse().join(' ').split('').reverse().join('');
 }
 
 > reverseInPlace('I am the good boy');
  = "I ma eht doog yob"
+```
 
 #### Interviewer: ok. fine. can you do it without using build in reverse function?
 
