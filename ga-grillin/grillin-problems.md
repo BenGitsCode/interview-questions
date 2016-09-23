@@ -339,3 +339,146 @@ function reverseInPlace(str){
 
 //if u cant do this,
 //have a glass of water, and sleep
+
+## First non repeating char (for in loop)
+Question: How could you find the first non repeating char in a string?
+
+Answer: You must ask follow up questions.
+
+Clarification: Is it case sensitive?
+
+Interviewer: interviewer might say no.
+
+Clarification: is it very long string or couple hundred?
+
+Interviewer: Why does that matter
+
+you: for example, if it is a very long string say a million characters and i want to check whether 26 English characters are repeating. I might check whether all characters are duplicated in every 200 letters (for example) other than looping through the whole string. this will save computation time.
+
+Interviewer: For simplicity, you string is "the quick brown fox jumps then quickly blow air"
+
+Clarification: (silly question) ascii or unicode.
+
+```javascript
+function firstNonRepeatChar(str){
+  var len = str.length,
+      char,
+      charCount = {};
+  for(var i =0; i<len; i++){
+    char = str[i];
+    if(charCount[char]){
+      charCount[char]++;
+    }
+    else
+      charCount[char] = 1;
+  }
+  for (var j in charCount){
+    if (charCount[j]==1)
+       return j;
+  }
+}
+
+firstNonRepeatChar('the quick brown fox jumps then quickly blow air');
+ result = "f"
+```
+
+## Remove duplicate char
+Question: How will you remove duplicate characters from a sting?
+
+#### You: This is very similar to first non repeating char. You will asks similar question. Is it case sensitive.
+
+#### If interviewer says, this is case sensitive then life become easier you. If he says no. you can either use string.toLowercase() to make whole string lower. he might not like it. because return string will not posses the same case. So
+
+```javascript
+function removeDuplicateChar(str){
+  var len = str.length,
+      char,
+      charCount = {},
+      newStr = [];
+  for(var i =0; i<len; i++){
+    char = str[i];
+    if(charCount[char]){
+      charCount[char]++;
+    }
+    else
+      charCount[char] = 1;
+  }
+  for (var j in charCount){
+    if (charCount[j]==1)
+       newStr.push(j);
+  }
+  return newStr.join('');
+}
+ removeDuplicateChar('Learn more javascript dude');
+  result "Lnmojvsciptu"
+```
+
+check palindrome
+Question: How will you verify a word as palindrome?
+
+Answer: if you reverse a word and it becomes same as the previous word, it is called palindrome.
+
+```javascript
+function isPalindrome(str){
+  var i, len = str.length;
+  for(i =0; i<len/2; i++){
+    if (str[i]!== str[len -1 -i])
+       return false;
+  }
+  return true;
+}
+
+> isPalindrome('madam')
+  = true
+> isPalindrome('toyota')
+  = false
+```
+#### or you can use build in method
+
+```javascript
+function checkPalindrom(str) {
+    return str == str.split('').reverse().join('');
+}
+```
+Note:this has one problem. It is not guaranteed that for in loop will be executed in order.
+
+For case insensitive: when u r setting property of charCount or increase counter, just make the char.toLowerCase(). or you can do something fancy with charCode (if you can deal with it.)
+
+#### inRuby
+
+```ruby
+pal = "Never a foot too far, even."
+class String
+  def palindrome?
+    letters = self.downcase.scan(/\w/)
+    letters == letters.reverse
+  end
+end
+pal.palindrome? #=> true
+```
+
+```ruby
+def check_palindromic(variable)
+  if variable.reverse == variable #Check if string same when reversed
+    puts "#{ variable } is a palindrome."
+  else # If string is not the same when reversed
+    puts "#{ variable } is not a palindrome."
+  end
+end
+```
+
+#### recursive solution string indexing
+
+```ruby
+def palindrome?(string)
+  if string.length == 1 || string.length == 0
+    true
+  else
+    if string[0] == string[-1]
+      palindrome?(string[1..-2])
+    else
+      false
+    end
+  end
+end
+```
