@@ -1,13 +1,33 @@
-# Coding Questions:
+# Table of Contents
+- [String type coercion](String type coercion)
+- [Quick Brown Fox 3d arrays](Quick Brown Fox 3d arrays)
+- [Permutations](## Permutations)
+- [sum function](#sum)
+- [Check Prime](#check prime)
 
-*Question: What is the value of `foo`?*
+## Table of Contents
+
+- [Background](#background)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Generator](#generator)
+  - [Badge](#badge)
+  - [Example Readmes](#example-readmes)
+- [Contribute](#contribute)
+- [License](#license)
+
+
+## Coding Questions:
+
+## String type coercion
+#### What is the value of `foo`?*
 ```javascript
 var foo = 10 + '20';
 ```
-## Quick Brown Fox
+## Quick Brown Fox 3d arrays
 
 
-You're given a vector of vectors of words, e.g.:
+You're given an array of arrays of words, e.g.:
 ```javascript
 [['quick', 'lazy'], ['brown', 'black', 'grey'], ['fox', 'dog']].
 ```
@@ -70,6 +90,8 @@ step-3 [1,2,3,4].splice(2,1) will return [3] and remaining array = [1,2,4]
 step-4 Use recursive method to get the permutation of the rest of the elements by passing array as string
 step-5 Finally, concat like a+permute(bc) for each
 
+## sum
+
 write a sum() function that accepts any number of arguments, and returns their sum. Then, ask them to use that function (without modification) to sum all the values in an array. They should write a function that looks like this:
 
 ```javascript
@@ -93,7 +115,7 @@ sum.apply(null, data); // 6
 
 Question: How would you verify a prime number?
 
-Answer: a prime number is only divisible by itself and 1. So, i will run a while loop and increase by 1. (look at the code example. If you dont get it. this is not your cake. do learn javaScript basics and come back.)
+Answer: a prime number is only divisible by itself and - So, i will run a while loop and increase by 1. (look at the code example. If you dont get it. this is not your cake. do learn javaScript basics and come back.)
 
 ```javascript
 function isPrime(n){
@@ -481,4 +503,31 @@ def palindrome?(string)
     end
   end
 end
+```
+
+```ruby
+def is_palindrome(value)
+ value.downcase!
+
+ # Reverse the string
+ reversed = ""
+ count = value.length
+
+ while count > 0
+  count -= 1
+  reversed += value[count]
+ end
+# Instead of writing codes for reverse string
+# we can also use reverse ruby method
+# something like this value == value.reverse
+if value == reversed
+  return "#{value} is a palindrom"
+ else
+  return "#{value} is not a palindrom"
+ end
+end
+
+puts "Enter a Word"
+a = gets.chomp
+p is_palindrome(a)
 ```
