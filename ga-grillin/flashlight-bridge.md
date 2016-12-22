@@ -2,12 +2,24 @@
 Four people need to cross a rickety rope bridge to get back to their camp at night. Unfortunately they only have one flashlight and it only has enough light left for seventeen minutes . The bridge is too dangerous to cross without the flashlight ,and it's only strong enough to support two people at any given time . Each of the campers walk at different speed . One can cross the bridge in 1 minute ,another in 2 minutes , the third in 5 minutes and slowest one takes 10 minutes to cross . Show how they can make it in 17 minutes
 
 **A**
-1. 1 and 2 will cross=2min
-2. 1 returns back = 2+1=3min
-3. 1 now gives the light to 5 and 10 and they both cross= 3+10=13min
-4. now 2 takes the torch on the other side of the bridge and walks back= 13+2 = 15min
-5.1 and 2 return back=15+2 =17min!!
+1. 1 and 2 will cross=                                                          2min
+2. 1 returns back = 2+1=                                                        3min
+3. 1 now gives the light to 5 and 10 and they both cross= 3+10=                 13min
+4. now 2 takes the torch on the other side of the bridge and walks back 13+2 =  15min
+5. and 2 return back=15+2 =17min!!                                                  17min
 
+
+1    2, 1 =>          1, 2   2min
+2-   <=1              2      3min
+10    5, 10 =>         2,5,10 13min
+5
+
+1,2,5,10
+    (F)12=>      1,2        2min
+    (F)<=1       2         3min
+    (F)=>5,10    2,5,10    13min
+    (F)<=2                15min
+    (F)1,2=>       1,2,5,10
 
 Math solution:
 For 4 of them to come to the other side of the bridge there will be 5 "walks"

@@ -22,7 +22,7 @@
 ## String type coercion
 #### What is the value of `foo`?*
 ```javascript
-var foo = 10 + '20';
+:;
 ```
 ## Quick Brown Fox 3d arrays
 
