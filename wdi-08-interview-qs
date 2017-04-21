@@ -1,0 +1,158 @@
+# Brain teasers: 
+A prince and a princess are on opposite sides of the river. The prince has lock A, key A and a ring. The princess has lock B and key B. There is a boatman that can take things back and forth across the river, and has a box that anything can be put in, but will steal anything left unlocked. How can the prince get the ring to the princess? → Cara/Lara
+You have an unlimited amount of water, a five gallon bucket and a three gallon bucket. Neither bucket has measurement markings on it. Get me exactly four gallons. → Cara
+Why is a manhole cover round
+You are in a cabin in the woods, you get a stick from the woods, bring it back to the cabin, break the stick into three parts and put the parts on a table. Without touching or moving the sticks how could you find out if those three pieces can make a triangle?
+You have a container that holds 5 oz of water and another that holds 3 oz of water. Besides water all you have are the containers. Get exactly 4 oz of water in the 5 oz container.
+
+# Links: 
+thatjsdude.com/interview/ → CSS, HTML, JS 1 & 2
+http://rileyh.com/ui-developer-interview-questions-answers/
+
+# Phone Interview: 
+What is the difference between an id and a class (CSS)
+What is the difference between an internal and external stylesheet
+What is the difference between inline and block elements
+Describe the box model
+Tell me what the position properties are (absolute, relative, fixed, static)
+Follow up: Tell me how they differ
+What is the difference between display: none and visibility: hidden (CSS)
+What are three display properties and describe them (inline, block, inline-block)
+How could you apply CSS rules to a specific screen size or below
+Alternate: Explain media queries
+What is specificity in CSS?
+What is the difference between a span and a div
+What is semantic HTML
+Describe prototypal inheritance (JavaScript)
+Describe closures
+what is a promise
+what is the difference between one-way and two-way binding
+Describe what it means to have a Rest API
+What is the structure of an HTML document?
+What goes into the head of an HTML document?
+What is iteration?
+What are some of the benefits of using Bootstrap?
+What is inheritance, and when would you want to use it?
+Explain the difference in memory allocation for arrays vs. hashes
+What sorts of challenges can you face when working with asynchronous code?
+When would you want to use recursion (in the sense of functions calling themselves)?
+
+
+# In-person Interview 
+Question One:  → Cara
+<input type=”checkbox” id=”labelOne”>
+<label>Label</label>
+<input type=”checkbox” id=”labelTwo” checked=”checked”>
+<label> Label Two</label>
+
+Find the error in the HTML
+Draw what the display currently is
+
+Write the CSS to change the display to 
+→ unchecked Label
+→ checked Label Two
+Question Two:  → Cara
+	examples: [1, 3, 3, 5, 7, 9] and [1, 2, 3, 4] 
+If there is a repeating number in the array return the repeating number
+Otherwise return false
+Question Three:
+	Write out the html and css (no bootstrap) of the google home page
+Question Four:
+	Describe/Walk through how you would store the data for the animal kingdom… what type(s) of data structures?…. how would you get an element from within the data?
+Question Five: → Cara
+	Below is a parsed JSON object named advertisements. write a function that will display it in the following format : 
+The sub links named Thing One-Four are links with the url listed in their object.
+
+Ad One
+Thing One
+Thing Two
+Ad Two
+Thing Three
+Thing Four
+
+advertisements = [
+	{
+		name: “Ad One”,
+		id: 1,
+	ads: [
+		{
+			id: 1,
+	name: “Thing One”,
+	url: “http://localhost”
+},
+{
+id: 2,
+name: “Thing Two”,
+url: “http://localhost”
+}
+] // end ads
+},
+{
+		name: “Ad Two”,
+		id: 2,
+	ads: [
+		{
+			id: 1,
+	name: “Thing Three”,
+	url: “http://localhost”
+},
+{
+id: 2,
+name: “Thing Four”,
+url: “http://localhost”
+}
+] // end ads
+} 
+] // end advertisements
+
+# Question six: I took a screenshot and attached the image below. The CSS you cant see doesnt really matter because its just sizing the boxes, you can make your own sizes. Answer the questions found in the bottom left box. You should only use CSS no JS and no changing the HTML → Cara PS I can send you the image if you want it
+Given a character array, write a function that returns true if the character array is made up of a perfect set of substrings, and false if it’s not.  For example, the arrays [“f”, “o”, “o”, “f”, “o”, “o”, “f”, “o”, “o”, “f”, “o”, “o” ] and [“f”, “f”, “f”] would return true but [“f”, “o”, “o”, “b”, “o”, “o”, “f”, “o”, “o”, “f”, “o”, “o” ]  [“f”, “o” “f”] would return false.
+How would you implement an e-commerce site from end to end (database structure, models, controllers, fron-end, etc.)
+How do you think the Amazon recomendations feature works?
+How do you think Google’s search algorithm works?  How does it know what pages to display first (advertising considerations aside)?
+
+
+# Phone interview questions that I can remember - Bernard
+What are the differences between an abstract class and an interface?
+What are the differences between static typing and dynamic typing?
+What is recursion? What are the dangers of using it?
+What is the difference between an array and an associative array?
+What is a delegate and what is it used for?
+What are the HTTP verbs and what do they do?
+What is MVC?
+What are port 80 and port 443 used for?
+How would you validate an e-mail address?
+Is it better to perform validation on the front end or the back end?
+What are the differences between a document-oriented database and a relational database? When would you use one over the other?
+What is an inner join, right join, and left join?
+What is an index used for in a database?
+What is ORM?
+What are the differences between waterfall development and agile development?
+
+# Whiteboard session - Bernard
+Write a function that finds the mode of an input array
+Write the AngularJS code for sending and handling an HTTP request
+Draw diagrams on how to split up a website that is similar TV Guide and how to handle responsiveness.
+
+# Suggestions for practice by a couple of programmer friends - Bernard
+Write an implementation of a stack.
+Write an implementation of an associative array.
+Write an implementation of a tree.
+Write an implementation of a least recently used cache.
+Write an implementation of an integer parsing function.
+
+# Algorithms: 
+given sorted array of integers, return number of duplicates in array.
+[1,2,2,5,6,6,6,7] should return 2 (since there are 2 duplicates, 2 and 6)
+sort array of integers from low to high
+given array, return randomly shuffled array (without making a new array, just modify the old)
+create function that returns true if two arrays of coins, containing only quarters and nickels, is identical if nickels are removed. coins have properties 'type' and 'year'. (with constraint that you can’t make new array removing the nickels -- that would take too much memory)
+given array of strings, return array of palindromized strings. if a given string can’t be turned into a palindrome, it will return -1 at the corresponding index.
+[‘aab’, ‘abc’, ‘abb’] should return [‘aba’, -1, ‘bab’]
+
+# Other exercises:
+build a car using JS prototypes with methods: accelerate, decelerate, check speed, check odometer
+how would you build a comments function, where on a contact’s page you can write a comment tagging someone from users DB and someone from a contacts DB
+how would you prevent a race condition on a page where a user can toggle series of options. 
+write what’s going on under the hood when jQuery makes an AJAX request
+
