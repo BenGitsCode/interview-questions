@@ -1,0 +1,98 @@
+# HTML/CSS
+What is doctype? Why do u need it?
+doctype is an instruction to the browser to inform about the version of html document and how browser should render it.
+
+It ensures how element should be displayed on the page by most of the browser. And it also makes browser's life easier. otherwise, browser will guess and will go to quirks mode. Moreover, doctype is required to validate markup.
+
+What is the use of data- attribute?
+allow you to store extra information/ data in the DOM. u can write valid html with embedded private data. You can easily access data attribute by using javascript and hence a lot of libraries like knockout uses it.
+
+What is the difference between span and div?
+div is a block element and span is inline element.
+
+Extra: It is illegal to put block element inside inline element. div can have a p tag and a p tag can have a span. However, span can't have a div or p tag inside.
+
+When should you use section, div or article?
+<section>, group of content inside is related to a single theme, and should appear as an entry in an outline of the page. It’s a chunk of related content, like a subsection of a long article, a major part of the page (eg the news section on the homepage), or a page in a webapp’s tabbed interface. A section normally has a heading (title) and maybe a footer too.
+<article>, represents a complete, or self-contained, composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content.
+<div>, on the other hand, does not convey any meaning, aside from any found in its class, lang and title attributes.
+
+Difference between standard/ strict mode and quirks mode?
+quirks mode in browser allows u to render page for as old browsers. This is for backward compatibility.
+What is semantic HTML?
+
+Semantic HTML, or "semantically-correct HTML", is HTML where the tags used to structure content are selected and applied appropriately to the meaning of the content.
+for example, <b></b> (for bold), and <i></i> (for italic) should never be used, because they’re to do with formatting, not with the meaning or structure of the content. Instead, use the replacements <strong></strong> and <em></em> (meaning emphasis), which by default will turn text bold and italic (but don’t have to do so in all browsers), while adding meaning to the structure of the content.
+
+Question: Why you would like to use semantic tag?
+
+Search Engine Optimization, accessibility, repurposing, light code.
+
+Many visually impaired person rely on browser speech and semantic tag helps to interpret page content clearly.
+
+What does float do?
+float pushes an element to the sides of a page with text wrapped around it. you can create entire page or a smaller area by using float. if size of a floated element changes, text around it will re-flow to accommodate the changes. You can have float left, right, none or inherit.
+if you set, 'float: left;' for an image, it will move to the left until the margin, padding or border of another block-level element is reached. The normal flow will wrap around on the right side.
+
+How can you clear sides of a floating element?
+
+If you clear a slide of an element, floating elements will not be accepted on that side. With 'clear' set to 'left', an element will be moved below any floating element on the left side. clear is used to stop wrap of an element around a floating element.
+
+Why css selectors mixed up with cases don't apply the styles?
+because, html ID and classes are case sensitive.
+
+Does margin-top or margin-bottom has effect on inline element?
+no.
+
+Does padding-top or padding-bottom has effect on inline element?
+no.
+
+Does padding-left or padding-right or margin-left or margin-right has effect on inline element?
+yes.
+
+In a HTML document, the pseudo class :root always refers to the <html> element.
+True
+
+How absolute, relative, fixed and static position differ?
+absolute, place an element exactly where you want to place it. absolute position is actually set relative to the element's parent. if no parent available then relatively place to the page itself.
+relative, is position an element relative to itself (from where the element would be placed, if u don't apply relative positioning). for example, if u set position relative to an element and set top: 10px, it will move 10px down from where it would be normally.
+fixed, element is positioned relative to viewport or the browser window itself. viewport doesn't changed if u scroll and hence fixed element will stay right in the same position.
+static, element will be positioned based on the normal flow of the document. usually, you will use position static to remove other position might be applied to an element.
+
+What are the differences between visibility hidden and display none?
+display: none removes the element from the normal layout flow and allow other elements to fill in. visibility: hidden tag is rendered, it takes space in the normal flow but doesn't show it.
+
+What are the differences between inline, block and inline-block?
+inline, elements do not break the flow. think of span it fits in the line. Important points about inline elements, margin/ padding will push other elements horizontally not vertically. Moreover, inline elements ignores height and width.
+block, breaks the flow and dont sits inline. they are usually container like div, section, ul and also text p, h1, etc.
+inline-block, will be similar to inline and will go with the flow of the page. Only differences is this this will take height and width.
+
+What is specificity? How do u calculate specificity?
+is a process of determining which css rule will be applied to an element. it actually determines which rules will take precedence. inline style usually wins then ID then class value (or pseudo-class or attribute selector), universal selector (*) has no specificity.
+
+# JAVASCRIPT
+Question: What are the differences between null and undefined?
+Answer: JavaScript has two distinct values for nothing, null and undefined.
+Undefined means, value of the variable is not defined. JavaScript has a global variable undefined whose value is "undefined" and typeof undefined is also "undefined". Remember, undefined is not a constant or a keyword. undefined is a type with exactly one value: undefined. Assigning a new value to it does not change the value of the type undefined.
+
+8 Ways to get Undefined:
+A declared variable without assigning any value to it.
+Implicit returns of functions due to missing return statements.
+return statements that do not explicitly return anything.
+Lookups of non-existent properties in an object.
+Function parameters that have not passed.
+Anything that has been set to the value of undefined.
+Any expression in the form of void(expression)
+The value of the global variable undefined
+null means empty or non-existent value which is used by programmers to indicate “no value”. null is a primitive value and you can assign null to any variable. null is not an object, it is a primitive value. For example, you cannot add properties to it. Sometimes people wrongly assume that it is an object, because typeof null returns "object".
+
+Question: What the heck is this in JavaScript?
+At the time of execution of every function, JavaScript engine sets a property to the function called this which refer to the current execution context. this is always refer to an object and depends on how function is called. There are 7 different cases where the value of this varies.
+In the global context or inside a function this refers to the window object.
+
+Inside IIFE (immediate invoking function) if you use "use strict", value of this is undefined. To pass access window inside IIFE with "use strict", you have to pass this.
+While executing a function in the context of an object, the object becomes the value of this
+Inside a setTimeout function, the value of this is the window object.
+If you use a constructor (by using new keyword) to create an object, the value of this will refer to the newly created object.
+You can set the value of this to any arbitrary object by passing the object as the first parameter of bind, call or apply
+For dom event handler, value of this would be the element that fired the event
