@@ -5,8 +5,8 @@ Four people need to cross a rickety rope bridge to get back to their camp at nig
 1. 1 and 2 will cross=                                                          2min
 2. 1 returns back = 2+1=                                                        3min
 3. 1 now gives the light to 5 and 10 and they both cross= 3+10=                 13min
-4. now 2 takes the torch on the other side of the bridge and walks back 13+2 =  15min
-5. and 2 return back=15+2 =17min!!                                                  17min
+4. Now 2 takes the torch on the other side of the bridge and walks back 13+2 =  15min
+5. 1 and 2 return back=15+2 =17min!!                                            17min
 
 
 1    2, 1 =>          1, 2   2min
