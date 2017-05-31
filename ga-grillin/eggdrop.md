@@ -23,17 +23,17 @@ There’s no other one egg solution. Sure, if we’d been feeling lucky we could
 
 
 
-* Of course there is a chance that the egg will not break on floor 100, and this is a valid solution.
+* Of course there is a chance that the egg will not break on floor 100, and this is a valid solutioni.**
 
 
-Many Eggs
+**Many Eggs**
 
 
 At the other extreme, what if we had an infinite number of eggs? (Or at least as many eggs as we need). What would our strategy be here? In this case we’d use one of a programmer’s favorite tools, the binary tree.
 
 First we’d go to floor 50 and drop an egg. It either breaks, or it does not. The outcome of this drop instantly cuts our problem in half. If it breaks, we know the solution lives in the bottom half of the building (floor 1 – floor 49). If it survives, we know the solution is in the top half of the building (floor 51 – 100). On each drop, we keep dividing the problem in half and half again until we get to our solution.
 
-The mathematicians in the audience will quickly see that the number of drops required for this solution is log2 n, where n is the number of floors of the building. (This is like asking how many powers of two there are).
+The mathematicians in the audience will quickly see that the number of drops required for this solution is `log2 n`, where n is the number of floors of the building. (This is like asking how many powers of two there are).
 
 Because this building does not have a number of floors equal to a round number power of two, we need to round up to number of drops to get seven ( log2 100 = 6.644 )
 
