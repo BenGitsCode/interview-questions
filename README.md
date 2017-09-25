@@ -12,16 +12,6 @@ TODO: Put more badges here.
 - [Contribute](#contribute)
 - [License](#license)
 
-## Install
-
-```
-```
-
-## Usage
-
-```
-```
-
 ## Contribute
 
 PRs accepted.
