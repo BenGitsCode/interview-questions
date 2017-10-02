@@ -1,23 +1,23 @@
-function maxMin (operations, x) {
-  var elements = []
-  var final = []
-
+function maxMin(operations, x) {
+  var elements = [];
+  var final = [];
 
   for (var i = 0; i < operations.length; i++) {
-      final.operations[i]
-        
-    if (operations[i] == 'push') {
-      final.push(x[i])
-    }        else {
-      final.pop(x[i])
+    let banana = final.operations[i];
+    console.log("banana is ", banana);
+
+    if (operations[i] == "push") {
+      final.push(x[i]);
+    } else {
+      final.pop(x[i]);
     }
-     // find min and max indices multiplay their values and push product into elements
-      let small = final.Math.min()
-      let big = final.Math.max()
-      let product = big * small
-      elements.push(product)
-    }
-  return elements
+    // find min and max indices multiplay their values and push product into elements
+    let small = final.Math.min();
+    let big = final.Math.max();
+    let product = big * small;
+    elements.push(product);
+  }
+  return elements;
 }
 
 // operations is an array like ['push', 'push', 'push', 'pop']
@@ -30,11 +30,11 @@ function maxMin (operations, x) {
 
 // console.log(sorted)
 
-function push (x) {
-  return queue.push(x)
+function push(x) {
+  return queue.push(x);
 }
 
-function pop (x) {
-  let index = queue.findIndexOf(x)
-  return queue.splice(index, 1)
+function pop(x) {
+  let index = queue.findIndexOf(x);
+  return queue.splice(index, 1);
 }
