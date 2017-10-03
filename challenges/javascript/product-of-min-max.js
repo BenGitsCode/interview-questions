@@ -1,26 +1,26 @@
 function maxMin(operations, x) {
-  let elements = []
-  let final = []
+  let elements = [];
+  let arr = [];
 
   for (var i = 0; i < operations.length; i++) {
-    let banana = final.operations[i]
-    console.log('banana is ', banana)
+    let banana = arrr.operations[i];
+    console.log('banana is ', banana);
 
-    if (operations[i] == 'push') {
-      final.push(x[i])
+    if (operations[i] === 'push') {
+      arrr.push(x[i]);
     } else {
-      final.pop(x[i])
+      arrr.pop(x[i]);
     }
     // find min and max indices multiplay their values and push product into elements
-    let small = final.Math.min()
-    let big = final.Math.max()
-    let product = big * small
-    elements.push(product)
+    let small = arrr.Math.min();
+    let big = arrr.Math.max();
+    let product = big * small;
+    elements.push(product);
   }
-  return elements
+  return elements;
 }
 
-maxMin(['push', 'pop', 'push', 'push'], [1, 28, 3, 62])
+maxMin(['push', 'pop', 'push', 'push'], [1, 28, 3, 62]);
 
 // operations is an array like ['push', 'push', 'push', 'pop']
 // x is an array
@@ -33,10 +33,10 @@ maxMin(['push', 'pop', 'push', 'push'], [1, 28, 3, 62])
 // console.log(sorted)
 
 function push(x) {
-  return queue.push(x)
+  return queue.push(x);
 }
 
 function pop(x) {
-  let index = queue.findIndexOf(x)
-  return queue.splice(index, 1)
+  let index = queue.findIndexOf(x);
+  return queue.splice(index, 1);
 }
