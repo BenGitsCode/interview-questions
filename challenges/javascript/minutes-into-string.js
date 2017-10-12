@@ -1,42 +1,27 @@
 // 1441 minutes into " 1 day and 1 minute "
 // strip away any zeros i.e. no "0 days 4 hours 1 min" or " 1 day 12 hours 0 minutes"
 
-let timeData = 1441
-
-// divide into days
-// divide into hours
-// divide into minutes
-
-// strip away any and all zeros
-// interpolate integers into string
-
-function timeIntoDays(timeData) {
-  let days = timeData / 60
-  console.log(days)
-
-  if (days >= 24 && days < 48) {
-    let days = 1
-    console.log('1 or more days ', days)
+let findTime = (t) => {
+  // 5020 test case
+  const times = ['day', 'hour', 'minute']
+  let totalHours = Math.floor(t / 60)
+  //totalHours = 83
+  let minRemain = t % 60 === 0 ? t : t % 60 // log at end
+  // minRemain = 40
+  if (totalHours > 24) {
+    let totalDays = Math.floor(totalHours / 24) // log at end
+    // totalDays = 3
+    let hoursRemain = totalHours - totalDays * 24
+    // hoursRemain = 11
+    console.log(`${totalDays} ${times[0]}${totalDays > 1 ? 's' : ''} ${hoursRemain} ${times[1]}${hoursRemain > 1 ? 's' : ''} ${minRemain} ${times[2]} ${minRemain > 1 ? 's' : ''}`)
   } else {
-    let days = 0
-    console.log('less than 1 day', days)
+    console.log(`${totalHours} ${times[1]} ${totalHours > 1 ? 's' : ''}${times[2]}${minRemain > 1 ? 's' : ''}`)
   }
-  return days
-  // unreachable code with current example
-  // console.log(days)
 }
-// timeIntoDays(timeData)
 
-function timeIntoHours(timeData) {
-  let hrs = timeData / 60
+//works 👍
+// findTime(5020)
 
-  console.log(hrs)
-  console.log(hrsTest)
-  //   if (condition) {
-  //   }
-}
-timeIntoHours(timeData)
-
-function timeLeft(timeData) {
-  //
-}
+// interpolation issue
+findTime(1441)
+findTime(3299)
