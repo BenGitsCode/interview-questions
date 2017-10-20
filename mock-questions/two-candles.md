@@ -7,6 +7,9 @@ You are given two ropes and a lighter. This is the only equipment you can use. Y
 
 
 
-Light both ends of rope A and one end of rope B. After 30 minutes, rope A will be completely burned up and there will be 30 minutes of rope B left. Light the other end of rope B; it will burn up in 15 minutes. Total time elapsed since starting the ropes on fire: 45 minutes.
+1. Light both ends of rope A and one end of rope B.
+1. After 30 minutes, rope A will be completely burned up and there will be 30 minutes of rope B left.
+1. Light the other end of rope B; it will burn up in 15 minutes.
+1. Total time elapsed since starting the ropes on fire: 45 minutes.
 
 
